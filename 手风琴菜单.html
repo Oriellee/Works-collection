@@ -49,19 +49,25 @@
     <script type="text/javascript">
     $(function() {
         $("#box ul li").hover(function() {
-            if (Number($(this).css("top").replace("px", "")) == ($(this).index() * 40)) {
-                var num = $(this).index();
+            run($(this));
+        });
+        $("#box ul li").click(function() {
+            run($(this));
+        });
+        function run(value){
+            if (Number(value.css("top").replace("px", "")) == (value.index() * 40)) {
+                var num = value.index();
                 for (var i = num + 1; i < $("#box ul li").length; i++) {
 
                     $("#box ul li").eq(i).stop(true, true).animate({ "top": eval(250 + i * 40) + "px" }, 400);
                 }
             } else {
-                var num = $(this).index();
+                var num = value.index();
                 for (var i = num; i > -1; i--) {
                     $("#box ul li").eq(i).stop(true, true).animate({ "top": eval(i * 40) + "px" }, 400);
                 }
             }
-        })
+        }
     })
     </script>
 </body>
