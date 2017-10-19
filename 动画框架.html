@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+	<title>动画框架</title>
+	<style>
+		div{
+			height: 60px;
+			text-align: center;
+			line-height: 60px;
+			margin-bottom:3%;
+		}
+		#top{
+			width: 100%;
+			background-color: #FCE4EC;
+		}
+		#a,#b,#c{
+			width: 20%;
+			background-color: #BBDEFB;
+		}
+	</style>
+</head>
+<body>
+	<div id="top">鼠标移动触发</div>
+	<div id="a">A</div>
+	<div id="b">b</div>
+	<div id="c">c</div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+	<script>
+		$(function(){
+			$("#top").hover(function() {
+				$("#a,#b,#c").css("background-color", '#FCE4EC').stop(true, true).animate({"width":"100%"}, 400);
+			}, function() {
+				$("#a,#b,#c").stop(true, true).css("background-color", '#BBDEFB').animate({"width":"20%"}, 400);
+			});
+			$("#a,#b,#c").hover(function() {
+				$(this).stop(true, true).css("background-color", '#FCE4EC').animate({"width":"100%"}, 400);
+			}, function() {
+				$(this).stop(true, true).css("background-color", '#BBDEFB').animate({"width":"20%"}, 400);
+			});
+		});
+	</script>
+</body>
+</html>

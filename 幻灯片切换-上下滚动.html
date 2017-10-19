@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>幻灯片切换-左右方向</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    #box {
+        width: 340px;
+        height: 202px;
+        margin: 50px auto;
+        left: calc(50% - 170px);
+        overflow: hidden;
+        position: absolute;
+    }
+
+    #img {
+        position: absolute;
+    }
+
+    #img>li {
+        left: 0;
+    }
+
+    #move {
+        position: absolute;
+        top: 160px;
+        left: calc(50% - 60px);
+    }
+
+    #move li {
+        background-color: #f60;
+        float: left;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        margin: 10px;
+        text-align: center;
+        color: #fff;
+        line-height: 20px;
+        font-size: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="img">
+            <li><img src="image/4.jpg"></li>
+            <li><img src="image/2.jpg"></li>
+            <li><img src="image/3.jpg"></li>
+        </ul>
+        <ul id="move">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $("#move>li").eq(0).css({
+            "background-color": '#fff',
+            "color": 'black'
+        });
+            $("#move>li").hover(function(event) {
+                $(this).css({
+                    "background-color": '#fff',
+                    "color": 'black'
+                }).siblings().css({
+                    "background-color": '#f60',
+                    "color": '#fff'
+                });
+                var num = $(this).index();
+               $("#img").stop(true,true).animate({'top': -num*204+"px"}, 400);
+            });
+    });
+    </script>
+</body>
+
+</html>
