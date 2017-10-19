@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <title>图片展示墙</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        outline: none;
+    }
+    img{
+        width: 150px;
+        height: 150px;
+    }
+    #box {
+        border: 1px solid red;
+        width: 890px;
+        height: 202px;
+        margin: 50px auto;
+        left: calc(50% - 445px);
+        overflow: hidden;
+        position: absolute;
+    }
+
+    #img {
+    	display: flex;
+        position: absolute;
+    }
+
+    #img>li {
+        float: left;
+        left: 0;
+        margin: 0 1%;
+    }
+
+    #move {
+        position: absolute;
+        top: 160px;
+        left: calc(50% - 60px);
+    }
+
+    #move li {
+        background-color: #f60;
+        float: left;
+        width: 20px;
+        height: 20px;
+        border-radius: 50px;
+        margin: 10px;
+        text-align: center;
+        color: #fff;
+        line-height: 20px;
+        font-size: 15px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="img">
+            <li><img src="image/01.jpg"></li>
+            <li><img src="image/02.jpg"></li>
+            <li><img src="image/03.jpg"></li>
+            <li><img src="image/04.jpg"></li>
+            <li><img src="image/05.jpg"></li>
+            <li><img src="image/06.jpg"></li>
+            <li><img src="image/07.jpg"></li>
+            <li><img src="image/08.jpg"></li>
+            <li><img src="image/09.jpg"></li>
+        </ul>
+        <ul id="move">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+        </ul>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+    // $(function() {
+    //     $("#move>li").eq(0).css({
+    //         "background-color": '#fff',
+    //         "color": 'black'
+    //     });
+    //         $("#move>li").hover(function(event) {
+    //             $(this).css({
+    //                 "background-color": '#fff',
+    //                 "color": 'black'
+    //             }).siblings().css({
+    //                 "background-color": '#f60',
+    //                 "color": '#fff'
+    //             });
+    //             var num = $(this).index();
+    //            $("#img>li").eq(num).stop(true,true).fadeIn(400).siblings().fadeOut(400);
+    //         });
+    // });
+    </script>
+</body>
+
+</html>
