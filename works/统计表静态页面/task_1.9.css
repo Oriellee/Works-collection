@@ -1,0 +1,546 @@
+/*div{
+	border: 1px solid red;/
+	}*/
+	.title{
+		height: 50px;
+		background-color: #4682B4;
+		min-width: 1350px;
+		}
+	.logo{
+		float: left;
+		margin-top: 7px;
+		margin-left: 40px;
+		}
+	.in{
+		float: right;
+		margin-top: 15px;
+		margin-right: 15px;
+		border-radius: 10px;
+		width: 170px;
+		background-image: url(psd/2.png);
+		background-repeat: no-repeat;
+		background-position: 10px 1px;
+		padding-left: 35px;
+		}
+	.man{
+		float: right;
+		margin-top: 17px;
+		margin-right: 5px;
+
+		}
+	.title a{
+		display: block;
+		float: right;
+		margin-top: 17px;
+		margin-right: 80px;
+		color: white;
+		font-size: 12px;
+		text-decoration: none;
+		}
+	.center{
+		height: 1000px;
+		min-width: 1350px;
+		}
+	.left{
+		float: left;
+		width: 300px;
+		height: 1300px;
+		background-color: #666666;
+		}
+	.tx{
+		height: 100px;
+		}
+	.tx img{
+		float: left;
+		margin-left: 50px;
+		margin-top: 20px;
+		}
+	.tx p{
+		margin-top: 40px;
+		margin-left: 20px;
+		float: left;
+		color: white;
+		}
+	.fs img{
+		margin-top: 35px;
+		margin-left: 50px;
+		}
+	.fs p{
+		margin-top: 30px;
+		margin-left: 50px;
+		}
+	.xiala{
+		line-height: 40px;
+		list-style-type: none;
+		background-color: #666666;
+		margin-top: 50px;
+		-webkit-padding-start: 0px;
+		}
+
+	.xiala a {
+	 display: block; 
+	 width: 60px; 
+	 text-align:center;
+	}
+	.xiala a:link  {
+	 color:#666; text-decoration:none;
+	}
+	.xiala a:visited  {
+	 color:white;font-family: 微软雅黑;text-decoration:none;
+	}
+	.xiala a:hover  {
+	 color:black;text-decoration:none;
+	}
+
+	.xiala li {
+		width: 300px;margin-top: 15px; 
+	}
+	.xiala li a{
+		width: 260px; text-align:left;padding-left: 40px;
+	}
+	.xiala li a:hover{
+		background:#F6F6F6;
+	}
+	.xiala li dl {
+	 list-style-type: none;
+	 text-align:left;
+	 width: 300px;
+	 display:none;
+	 margin: 0px;
+	}
+	.xiala li dl dd{
+	 float: left;
+	 width: 300px;
+	 line-height: 40px;
+	 background: #F6F6F6; 
+	 -webkit-margin-start: 0px;
+	 list-style-type: none;
+	}
+
+	.xiala li dl a{
+	 display: block; 
+	 width: 240px;
+	 padding-left: 60px;
+	 -webkit-margin-start: 0px;
+	 text-align:left;
+	
+	}
+	.xiala li dl a:link  {
+	 color:black;
+	 text-decoration:none;
+	}
+	.xiala li dl a:visited  {
+	 color:black;
+	 text-decoration:none;
+	}
+	.xiala li dl a:hover  {
+	 color:#F3F3F3;
+	 text-decoration:none;
+	 font-weight:normal;
+	 background:#009999;
+	}
+
+	.xiala li:hover dl {
+	 left: auto;
+	 display:block;
+	}
+	.right{
+		width: calc(100% - 300px);
+		height: 1300px;
+		position: relative;
+		margin-left: 300px;
+		background-color: #fff0f5;
+		}
+	.righttitle{
+		height: 25px;
+		color: grey;
+		background-color: white;
+		font-size: 10px;
+		padding-left: 30px;
+		padding-top: 10px;
+		}
+	.righttitle a{
+		color: blue;
+		}
+	.text{
+		width: 1000px;
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #fff0f5;
+		}
+	.search{
+		height: 100px;
+		background-color: white;
+		margin:0px 20px;
+		}
+	.search div{
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		margin-top: 20px;
+		margin-left: 30px;
+		width: 150px;
+		height: 50px;
+		}
+	.search p{
+		font-size: 5px;
+		width: 45px;
+		display: inline-block;
+		height: 15px;
+		margin:5px;
+		text-align: right;
+		color: grey;
+		}
+	.search select{
+		display: inline-block;
+		}
+	.search button{
+		margin-top: 10px;
+		margin-left: 10px;
+		width: 70px;
+		height: 30px;
+		background-color: #4682b4;
+		color: white;
+		}
+
+	.price{
+		height: 100px;
+		margin-top: 10px;
+		}
+
+		.price div{
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		left: 15px;
+		margin-top: 10px;
+		margin-left: 15px;
+		width: 100px;
+		height: 80px;
+		text-align: center;
+		background-color: white;
+			}
+		.price p{
+			font-size: 5px;
+			}
+		.price strong{
+			color: #ffa500;
+			font-size: 20px;
+			}
+		.shuliang{
+			height: 120px;
+			margin-top: 10px;
+			}
+		.shuliang div{
+			width: 215px;
+			height: 60px;
+			margin-left: 20px;
+			margin-top: 10px;
+			display: inline-block;
+			background-color: white;
+			}
+		.shuliang div p{
+			font-size: 5px;
+			margin:0px;
+			display:inline-block;
+			line-height: 20px;
+			position: relative;
+			top: -8px;
+			left: 20px;
+			}
+		.shuliang div p a{
+			color: grey;
+			}
+	.project{
+		height: 300px;
+		}
+	.firstproject{
+		float: left;
+		width: 550px;
+		height: 300px;
+		background-color: white;
+		border-radius: 15px;
+		margin-left: 20px;
+		}
+	.firstproject p{
+		width: 530px;
+		height: 25px;
+		margin: 0px;
+		background-color: #FFCCCC;
+		border-top-left-radius:15px;
+		border-top-right-radius:15px;
+		color: grey;
+		font-size: 10px;
+		padding-top: 12px;
+		padding-left: 20px;
+		}
+	.fp1{
+		width: 80px;
+		height: 20px;
+		position: relative;
+		left: 25px;
+		display: inline-block;
+		margin-left: 5px;
+		text-align: center;
+		padding-top: 5px;
+		font-size: 13px;
+		margin-top: 10px;
+		background-color: #FFCCCC;
+		}
+		.fp11{
+			background-color: white;
+			border-left: 2px solid #B8B8B8;
+			border-top: 2px solid #B8B8B8;
+			border-right:  2px solid #B8B8B8;
+			border-top-left-radius: 7px;
+			border-top-right-radius: 7px;
+			}
+	.biaoge{
+		margin:0px 30px 30px;
+		width: 490px;
+		height: 200px;
+		border-left: 2px solid #B8B8B8;
+		border-bottom: 2px solid #B8B8B8;
+		border-right:  2px solid #B8B8B8;
+		}
+	.bordertop{
+		width: 410px;
+		margin-left: 80px;
+		height: 2px;
+		background-color: #B8B8B8;
+		}
+	.biaoge table{
+		margin:20px 28px;
+		width: 430px;
+		height: 150px;
+		border-collapse: collapse;
+		text-align: center;
+		font-size: 12px;
+		}
+	.biaoge table td{
+		border: 1px solid #B8B8B8;
+		margin: 0px;
+		}
+	.secondproject{
+		width: 400px;
+		height: 300px;
+		margin-left: 23px;
+		background-color: white;
+		float: left;
+		border-radius: 15px;
+		}
+	.title1{
+		width: 380px;
+		height: 25px;
+		background-color: #FFCCCC;
+		margin: 0px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		color: grey;
+		font-size: 10px;
+		padding-top: 12px;
+		padding-left: 20px;
+		}
+	.title2{
+		margin-left: 60px;
+		margin-top: 5px;
+		margin-bottom: 0px;
+		font-size: 10px;
+		color: #B8B8B8;
+		}
+	.title3{
+		font-size: 13px;
+		margin-left: 60px;
+		margin-top: 5px;
+		}
+	.title4{
+		width: 80px;
+		height: 42px;
+		position: relative;
+		display: inline-block;
+		border-top: 1px solid #B8B8B8;
+		border-right: 1px solid #B8B8B8;
+		margin-left: 50px;
+		padding-left: 10px;
+		font-size: 13px;
+		padding-top: 8px;
+		padding-left: 10px;
+		}
+	.title5{
+		width: 200px;
+		height: 42px;
+		position: relative;
+		display: inline-block;
+		border-top: 1px solid #B8B8B8;
+		font-size: 13px;
+		margin-left:-5px;
+		padding-top: 8px;
+		padding-left: 10px;
+		}
+	.secondproject a{
+		color: #B8B8B8;
+		}
+	.title6{
+		width: 340px;
+		height: 100px;
+		border-top: 1px solid #B8B8B8;
+		margin-left: 50px;
+		padding-left: 10px;
+		font-size: 13px;
+		line-height: 20px;
+		}
+		.title7{
+			width: 300px;
+			height: 50px;
+			margin-left: 50px;
+			border-top: 1px solid #B8B8B8;
+			}
+		.submit1{
+			margin-left: 15px;
+			margin-top: 20px;
+			display: inline-block;
+			}
+		.title7 p{
+			display: inline-block;
+			font-size: 12px;
+			color: #B8B8B8;
+			vertical-align: middle;
+			margin-top: 5px;
+			}
+			.submit2{
+				width: 50px;
+				height: 30px;
+				background-color: #4682B4;
+				color: white;
+				text-align: center;
+				float: right;
+				margin-top: 10px;
+				margin-right: 20px;
+				border-radius: 5px;
+				}
+
+	.centerbottom{
+		width: 1000px;
+		height: 350px;
+		margin-top: 30px;
+		margin-left: auto;
+		margin-right: auto;
+		background-color: #fff0f5;
+		}
+	.calendar{
+		width: 400px;
+		height: 350px;
+		background-color: white;
+		border-radius: 15px;
+		float: left;
+		}
+	.calendartitle{
+		width: 380px;
+		height: 25px;
+		background-color: #FFCCCC;
+		margin: 0px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		color: grey;
+		font-size: 10px;
+		padding-top: 12px;
+		padding-left: 20px;
+		}
+	.calendar select{
+		margin-top: 10px;
+		position: relative;
+		left: 13px;
+		height: 20px;
+		margin-left: 21px;
+		}
+	.calendar input{
+		width: 70px;
+		height: 20px;
+		font-size: 12px;
+		background-color: white;
+		border:1px solid #B8B8B8;
+		position: relative;
+		margin-left: 35px;
+		}
+	.calendar table{
+		width: 350px;
+		height: 250px;
+		margin:10px 25px;
+		border-collapse: collapse;
+		}
+	.calendar table tr:nth-child(1){
+		border-top: 1px solid #4682B4;
+		border-bottom: 1px solid #B8B8B8;
+		font-size: 12px;
+		width: 350px;
+		height: 30px;
+		text-align: center;
+		}
+	.calendar table tr{
+		font-size: 5px;
+		font-weight: bold; 
+		width: 350px;
+		height: 30px;
+		text-align: center;
+		}
+	.calendar table tr td{
+		width: 50px;
+		}
+	.calendar table tr td:nth-child(6) a{
+		color:red;
+		}
+	.calendar table tr td:nth-child(7) a{
+	color:red;
+	}
+	.ranking{
+		width: 571px;
+		height: 400px;
+		margin-left: 25px;
+		float: left;
+		border-radius: 15px;
+		height: 350px;
+		background-color: white;
+		}
+	.rankingtitle{
+		width: 551px;
+		height: 25px;
+		background-color: #FFCCCC;
+		margin: 0px;
+		border-top-left-radius: 15px;
+		border-top-right-radius: 15px;
+		color: grey;
+		font-size: 10px;
+		padding-top: 12px;
+		padding-left: 20px;
+		}
+	 .ranking table{
+	 	width: 500px;
+	 	margin: 15px auto;
+	 	height: 260px;
+	 	border-collapse: collapse;
+	 	border:1px solid #B8B8B8;
+	 	font-size: 12px;
+	 	text-align: center;
+	 	}
+ 	.ranking table tr td:nth-child(1){
+ 		width:70px;
+ 		}
+
+ 	.ranking table tr td:nth-child(2){
+ 		width:100px;
+ 		}
+	.ranking table tr td:nth-child(3){
+		width:200px;
+		}
+	.ranking table tr td{
+		border: 1px solid #B8B8B8;
+		}
+	 .ranking table tr td img{
+	 	 margin-left: 20px; 
+		 width: 100px;
+		 height: 5px;
+		 vertical-align: middle;
+		 border-radius: 10px;
+	 	}
+	

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>简单的日历</title>
+	<style type="text/css">
+	body{
+		margin: 50px;
+	}
+		ul{
+			list-style: none;
+			width: 440px;
+			padding: 20px;
+			background-color:#DCDCDC; 
+		}
+		ul li{
+			display: inline-block;
+			width: 52px;
+			height: 50px;
+			margin: 5px;
+			text-align: center;
+			line-height: 50px;
+			background-color: #F08080;
+		}
+	</style>
+</head>
+<body>
+<label>选择月份：</label>
+<select>
+	<option>一月</option>
+	<option>二月</option>
+	<option>三月</option>
+	<option>四月</option>
+	<option>五月</option>
+	<option>六月</option>
+	<option>七月</option>
+	<option>八月</option>
+	<option>九月</option>
+	<option>十月</option>
+	<option>十一月</option>
+	<option>十二月</option>
+</select>
+<h1></h1>
+<ul>
+	<li></li>
+</ul>
+<script type="text/javascript">
+	var select = document.querySelector("select");
+	var h1 = document.querySelector("h1");
+	var ul = document.querySelector("ul");
+
+	select.onchange = function(){
+		var choice = select.value;
+		var days = 31;
+		if(choice === "四月"||choice === "六月"|| choice === "九月"||choice === "十一月"){
+			days = 30;
+		}
+		else if(choice === "二月"){
+			days = 28;
+		}
+		bian(days,choice);
+	}
+	function bian(days,choice){
+		ul.innerHTML = "";
+		h1.textContent = choice;
+		for(var i=1;i<=days;i++){
+			var time = document.createElement("li");
+			time.textContent = i;
+			ul.appendChild(time);
+		}
+	}
+	bian(31,"一月");
+</script>
+
+</body>
+</html>

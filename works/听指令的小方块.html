@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>3.5</title>
+	<style type="text/css">
+	#box{
+		width: 500px;
+		height: 550px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	table{
+		width: 400px;
+		height: 400px;
+		margin: 20px auto;
+		border-spacing: 0;
+	}
+	tr,td,th{
+		width: 30px;
+		height: 30px;
+		padding:0;
+	}
+	tr,td{
+		border: 1px solid #008080;
+	}
+	button{
+		width: 80px;
+		height: 25px;
+		margin: 5px;
+		background-color: #DCDCDC;
+		outline: none;
+		border-radius: 5px;
+	}
+	button:focus{
+		background-color: #F08080;
+	}
+	#start,#btn{
+		margin-left: 65px;
+		width: 400px;
+	}
+	
+	.blue{
+		width: 100%;
+		height: 33%;
+		background-color: blue;
+	}
+	.red{
+		width: 100%;
+		height: 66%;
+		background-color: red;
+	}
+	.father{
+		width: 100%;
+		height: 100%;
+		transition: all 1s;
+		/*定义旋转的元素和时间*/
+	}
+	</style>
+	
+</head>
+<body>
+	<div id="box">
+		<table>
+			<tr>
+				<th></th>
+				<th>1</th>
+				<th>2</th>
+				<th>3</th>
+				<th>4</th>
+				<th>5</th>
+				<th>6</th>
+				<th>7</th>
+				<th>8</th>
+				<th>9</th>
+				<th>10</th>
+				
+			</tr>
+			<tr>
+				<th>1</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>2</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>3</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>4</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>5</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>6</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>7</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>8</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>9</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<th>10</th>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+		<section id="start">
+			<button id="open1">开始</button>
+			<input type="text" id="input">
+			<button id="run">执行</button>
+		</section>
+		<section id="btn">
+				<button>LEFT</button>
+				<button>RIGHT</button>
+				<button>BOTTOM</button>
+				<button>GO</button>
+				<button>TRA LEF</button>
+				<button>TRA TOP</button>
+				<button>TRA RIG</button>
+				<button>TRA BOT</button>
+				<button>MOV LEF</button>
+				<button>MOV TOP</button>
+				<button>MOV RIG</button>
+				<button>MOV BOT</button>
+		</section>
+	</div>
+	<script>
+		// 根据id获取元素对象
+		var $ = function(id){
+			return document.getElementById(id);
+		}
+		var btn = document.querySelector("#btn");	
+		var td = document.querySelectorAll("td");	
+
+		// 定义一个随机函数
+		function random(min,max){
+			var num = Math.floor(Math.random()*(max-min)+min);
+			return num;
+		}
+
+		// 定义停止的函数，调用该函数后页面进入for循环，使所有的td背景色变为白色。
+		function stop(){
+			for(var i=0;i<td.length;i++){
+				var a = td[i];
+				a.style.backgroundColor = "#fff";
+				a.innerHTML = "";
+			}
+		}
+		// 页面中的按钮点击传回按钮的名称
+		btn.onclick = function(){
+			buttonText(event.target);
+		}
+		// 输入框的值等于按钮名称
+		function buttonText(value){
+			input.value = value.innerHTML;
+		}
+		// 新建一个box的div,传回父辈td函数,td所在的位置以及方向.
+		function newDiv(parents,number,newdeg){
+			var father = document.createElement("div");
+			var red = document.createElement("div");
+			var blue = document.createElement("div");
+			parents.appendChild(father);
+			father.appendChild(blue);
+			father.appendChild(red);
+			father.className = "father";
+			father.style.transform = "rotate("+newdeg*90+"deg)";
+			blue.className = "blue";
+			red.className = "red";
+			goOn(father,number);
+		}
+		// 生成一个随机的box.
+		open1.onclick = function(){
+			var number = random(0,100);
+			stop();
+			newDiv(td[number],number,"0");
+		}
+		// 传回父辈td函数,和td所在位置,判断输入值后调用改变方向的函数和go函数.
+		function goOn(father,number){
+			run.onclick = function(){
+				if(!input.value||father==null){
+				alert("请输入指令或新建格子！");
+				}else{
+					var newNumber = String(number).split("");
+					var str = father.style.transform.match(/\-?\d/g).join("")/1;
+					var newBox = (str%360)/90;
+					switch(input.value){
+					case "LEFT":
+						changeDirection(father,-90);
+						break;
+					case "RIGHT":
+						changeDirection(father,90);
+						break;
+					case "BOTTOM":
+						changeDirection(father,-180);
+						break;
+					case "TRA LEF":
+						if(newNumber.length>1){
+						if(number>newNumber[0]+0){
+						stop();
+						newDiv(td[number-1],number-1,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+							}
+						}else{
+							if(number>0){
+							stop();
+							newDiv(td[number-1],number-1,newBox);
+							}else{
+								alert("到世界的尽头啦！");
+							}
+						}
+						break;
+					case "TRA TOP":
+						if(number>9){
+						stop();
+						newDiv(td[number-10],number-10,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+						break;
+					case "TRA RIG":
+						if(newNumber.length>1){
+						if(number<newNumber[0]+9){
+						stop();
+						newDiv(td[number+1],number+1,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}else{
+						if(number<9){
+						stop();
+						newDiv(td[number+1],number+1,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}
+						break;
+					case "TRA BOT":
+						if(number<90){
+						stop();
+						newDiv(td[number+10],number+10,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+						break;
+					case "MOV LEF":
+						if(newNumber.length>1){
+						if(number>newNumber[0]+0){
+						stop();
+						newDiv(td[number-1],number-1,-1);
+						}else{
+							alert("到世界的尽头啦！");
+							}
+						}else{
+							if(number>0){
+							stop();
+							newDiv(td[number-1],number-1,-1);
+							}else{
+								alert("到世界的尽头啦！");
+							}
+						}
+						break;
+					case "MOV TOP":
+						if(number>9){
+						stop();
+						newDiv(td[number-10],number-10,0);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+						break;
+					case "MOV RIG":
+						if(newNumber.length>1){
+						if(number<newNumber[0]+9){
+						stop();
+						newDiv(td[number+1],number+1,-3);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}else{
+						if(number<9){
+						stop();
+						newDiv(td[number+1],number+1,-3);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}
+						break;
+					case "MOV BOT":
+						if(number<90){
+						stop();
+						newDiv(td[number+10],number+10,-2);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+						break;
+					case "GO":
+						move(father,number,newBox);
+						break;
+					default:
+						alert("请输入正确的指令！");
+					}
+				}
+			}
+		}
+		// 根据td,td的位置和td的方向,不断的生成新的box和调用stop函数消除之前的box。
+		function move(father,number,newBox){
+			var newNumber = String(number).split("");
+				if(newBox == "-0"){
+					if(number>10){
+						stop();
+						newDiv(td[number-10],number-10,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+				}if(newBox == "-2"){
+					if(number<90){
+						stop();
+						newDiv(td[number+10],number+10,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+				}if(newBox == "-1"){
+					if(newNumber.length>1){
+						if(number>newNumber[0]+0){
+						stop();
+						newDiv(td[number-1],number-1,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}else{
+							if(number>0){
+							stop();
+							newDiv(td[number-1],number-1,newBox);
+							}else{
+								alert("到世界的尽头啦！");
+						}
+					}
+					
+				}if(newBox == "-3"){
+					if(newNumber.length>1){
+						if(number<newNumber[0]+9){
+						stop();
+						newDiv(td[number+1],number+1,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}else{
+						if(number<9){
+						stop();
+						newDiv(td[number+1],number+1,newBox);
+						}else{
+							alert("到世界的尽头啦！");
+						}
+					}
+					
+				}
+
+		}
+		goOn();
+		// 根据传回的td和角度值改编box的方向。
+		function changeDirection(ele,deg){
+			if (!ele.style.transform) {
+			ele.style.transform = "rotate(" + deg+"deg)";
+			return (deg%360)/90;
+			}
+			else{
+				var str = ele.style.transform;
+				var olddeg = str.match(/\-?\d/g).join("")/1;//匹配原来的角度数
+				var newdeg = olddeg+deg;
+				if (newdeg>0) {
+					newdeg -=360;
+				}
+				ele.style.transform =  "rotate(" + newdeg+"deg)";
+				return (newdeg%360)/90;
+				// 返回的数值是一个余数除以90，绝对值只为1.2.3.0的值。
+			}
+
+		}
+	</script>
+</body>
+</html>

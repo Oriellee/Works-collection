@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Number guessing game</title>
+
+    <style>
+      html {
+        font-family: sans-serif;
+      }
+      body {
+        width: 50%;
+        max-width: 800px;
+        min-width: 480px;
+        margin: 0 auto;
+      }
+      .lastResult {
+        color: white;
+        padding: 3px;
+      }
+    </style>
+  </head>
+
+  <body>
+      <h1>Number guessing game</h1>
+
+      <p>We have selected a random number between 1 and 100. See if you can guess it in 10 turns or fewer. We'll tell you if your guess was too high or too low.</p>
+
+<div class="form">
+  <label for="shuru">Enter a guess: </label><input type="text" id="shuru" class="shuru">
+  <input type="submit" value="Submit guess" class="sran">
+</div>
+
+<div class="resultParas">
+  <p class="caice"></p>
+  <p class="jieguo"></p>
+  <p class="tishi"></p>
+</div>
+
+<script>
+  var daan = Math.floor(Math.random() * 100) + 1;
+
+  var caice = document.querySelector(".caice");
+  var jieguo = document.querySelector(".jieguo");
+  var tishi = document.querySelector(".tishi");
+  //定义三个隐藏的段落。
+  var sran = document.querySelector(".sran");
+  var shuru = document.querySelector(".shuru");
+  //定义输入框和输入按钮。
+  var caicecs = 1;
+  var resetButton;
+  //定义猜测次数和还原按钮。
+
+  function checkGuess(){
+    var userGuess = Number(shuru.value);
+    if(caicecs === 1){
+      caice.textContent = "您猜测的数字为：";
+    }
+    caice.textContent += userGuess +" ";
+
+    if(userGuess === daan){
+      jieguo.textContent = "聪明！猜对了！";
+      jieguo.style.backgroundColor = "green";
+      tishi.textContent = " ";
+      setGameOver();
+    }
+    else if(caicecs === 10){
+      jieguo.textContent = "哈哈，次数用完了！";
+      setGameOver();
+    }
+    else{
+      jieguo.textContent = "错啦！";
+      jieguo.style.backgroundColor = "red";
+      if(userGuess<daan){
+        tishi.textContent = "猜的太少啦！";
+      }
+      else if(userGuess>daan){
+        tishi.textContent = "猜的太大啦！";
+      }
+    }
+    caicecs++;
+    shuru.value = " ";
+    shuru.focus();
+  }
+  sran.addEventListener("click",checkGuess);
+  function setGameOver(){
+    shuru.disabled = true;
+    sran.disabled = true;
+    resetButton = document.createElement("button");
+    resetButton.textContent = "从头再来一次！";
+    document.body.appendChild(resetButton);
+    resetButton.addEventListener("click",resetGame);
+  }
+  function resetGame(){
+    caicecs = 1;
+    var allp = document.querySelectorAll(".resultParas p");
+    for(var i = 0;i<allp.length;i++){
+      allp[i].textContent = " ";
+    }
+    resetButton.parentNode.removeChild(resetButton);
+
+    shuru.disabled = false;
+    sran.disabled = false;
+    shuru.value = " ";
+    shuru.focus();
+    tishi.style.backgroundColor = "white";
+    daan = Math.floor(Math.random()*100)+1;
+
+  }
+</script>
+</body>
+</html>
