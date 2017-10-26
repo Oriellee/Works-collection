@@ -51,9 +51,9 @@
         <canvas id="canvas"></canvas>
     </div>
     <div id="buttonGroup">
-            <a href="javascript:reset()" class="btn btn-primary" id="reset-button">RESET</a>
-            <a href="javascript:show()" class="btn btn-success" id="show-button">SHOW</a>
-        </div>
+        <a href="javascript:reset()" class="btn btn-primary" id="reset-button">RESET</a>
+        <a href="javascript:show()" class="btn btn-success" id="show-button">SHOW</a>
+    </div>
     <script type="text/javascript" src="jquery-3.2.1.js"></script>
     <script>
     var canvasWidth = 800;
@@ -100,10 +100,10 @@
     }
 
     function show() {
-       var run = setInterval(
+        var run = setInterval(
             function() {
                 clippingRegion.r += 20;
-                if(clippingRegion.r>2*Math.max(canvas.width,canvas.height)){
+                if (clippingRegion.r > 2 * Math.max(canvas.width, canvas.height)) {
                     clearInterval(run);
                 }
                 draw(image, clippingRegion);
