@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <title>照片模糊</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+	html,body{
+		min-width: 600px;
+	}
+    #box {
+        width: 600px;
+        height: 420px;
+        margin: 50px auto;
+    }
+
+    #down,
+    #up {
+        width: 600px;
+        height: 400px;
+        position: absolute;
+    }
+
+    #up {
+        width: 0px;
+        height: 0px;
+        top: 0;
+        left: 0;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+
+    #down img,
+    #up img {
+        width: 600px;
+        height: 400px;
+    }
+
+    #down img {
+        filter: blur(10px);
+    }
+
+    #up img {
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+
+    #buttonGroup {
+        width: 600px;
+        height: 3rem;
+        position: absolute;
+        top: 460px;
+        text-align: center;
+        line-height: 3rem;
+    }
+
+    #buttonGroup button {
+        margin: 0 1rem;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="down"><img src="image/模糊.jpg"></div>
+        <div id="up"><img src="image/模糊.jpg"></div>
+        <div id="buttonGroup">
+            <button id="start" class="btn btn-primary">开始</button>
+            <button id="open" class="btn btn-success">全景</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script>
+    $(function() {
+        function random(min, max) {
+            var num = Math.floor(Math.random() * (max - min)) + min;
+            return num;
+        }
+        $("#open").click(function(event) {
+        	$("#up img").css({
+        		"left": '0',
+        		"top": '0'
+        	});
+        	$("#up").stop().animate({"width": "600px", "height": "400px","top":"50px"}, 3000);
+        		$("#up").css({
+        			"border-radius": '0',
+        			"left": "calc(50% - 300px)"
+        		});;
+        });
+        $("#start").click(function(event) {
+        	var minTop= Number($("#box").css("margin-top").replace("px",""));
+        	var maxTop = Number($("#up img").css("height").replace("px","")) + minTop - Number($("#up").css("height").replace("px",""));
+        	console.log(minTop) ;
+        	console.log(maxTop);
+            var topNum = random(minTop, maxTop);
+            var leftNum = random(-100, 300);
+            var imgLeft  = 400 - leftNum;
+            $("#up").css({
+            	"border-radius":"100%",
+                "width": '200px',
+                "height": '200px',
+                "top": topNum + "px",
+                "left": "calc(50% - ("+leftNum + "px))"
+            });
+            $("#up img").css({
+            	"top": -(topNum-50)+"px",
+            	"left": "calc(50% - "+imgLeft+"px)"
+            });
+        });
+    })
+    </script>
+</body>
+
+</html>
