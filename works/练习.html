@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <title>lianxi</title>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    #box {
+        position: relative;
+        width: 70rem;
+        height: 50rem;
+        margin: 2rem auto;
+    }
+
+    #blur-image {
+        width: 70rem;
+        height: 50rem;
+        position: absolute;
+        display: block;
+        z-index: 0;
+        /*滤镜编辑模糊程度*/
+        -webkit-filter: grayscale(100%);
+        -o-filter: grayscale(100%);
+        filter: grayscale(100%);
+    }
+
+    #canvas {
+        position: absolute;
+        z-index: 100;
+        display: block;
+    }
+
+    #buttonGroup {
+        width: 70rem;
+        margin: 4rem auto;
+        text-align: center;
+    }
+
+    #buttonGroup button {
+        margin: 0 1rem;
+    }
+
+/*    @media screen and (max-width:840px) {
+        #box {
+            width: 50rem;
+            height: 35rem;
+            margin: 2rem auto;
+        }
+        #blur-image {
+            width: 50rem;
+            height: 35rem;
+        }
+        #buttonGroup {
+            width: 50rem;
+        }
+    }
+
+    @media screen and (max-width:600px) {
+        #box {
+            width: 25rem;
+            height: 18rem;
+            margin: 1rem auto;
+        }
+        #blur-image {
+            width: 25rem;
+            height: 18rem;
+        }
+        #buttonGroup {
+            width: 25rem;
+            margin: 2rem auto;
+        }
+    }*/
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <img id="blur-image" src="image/模糊.jpg">
+        <canvas id="canvas"></canvas>
+        <!-- 创建canvas画布 -->
+    </div>
+    <div id="buttonGroup">
+        <button id="reset" class="btn btn-primary">reset</button>
+        <button id="show" class="btn btn-success">show</button>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script>
+
+    // 定义画布大小
+    var boxWidth = Number($("#box").width());
+    var boxHeight = Number($("#box").height());
+    var canvasWidth = boxWidth;
+    var canvasHeight = boxHeight;
+
+    // 定义画布
+    var canvas = document.getElementById("canvas");
+    var context = canvas.getContext("2d");
+    canvas.width = canvasWidth;
+    canvas.height = canvasHeight;
+
+    // 定义圆的半径
+    var radius = 100;
+
+    // 加载图片
+    var image = new Image();
+    image.src = "image/模糊.jpg";
+
+    // 定义圆心初始值
+    var centerPoint = { x: 400, y: 200, r: radius };
+    image.onload = function() {
+        initCanvas();
+    }
+    // 点击按钮调用函数
+    $("#reset").click(function(event) {
+        reset();
+    });
+    $("#show").click(function(event) {
+        show();
+    });
+
+
+    // 定义圆心的随机位置
+    function initCanvas() {
+        centerPoint = {
+            x: Math.random() * (canvas.width - 2 * radius) + radius,
+            y: Math.random() * (canvas.height - 2 * radius) + radius,
+            r: radius
+        }
+        draw(image, centerPoint);
+    }
+
+    // 切割圆
+    function cut(centerPoint) {
+        // 开始画圆
+        context.beginPath();
+        // 调用arc函数分别需要x,y,半径,开始角度,结束角度,顺时针逆时针
+        context.arc(centerPoint.x, centerPoint.y, centerPoint.r, 0, Math.PI * 2, false);
+        // 切割出一个圆
+        context.clip();
+    }
+
+    // 创建画布
+    function draw(image, centerPoint) {
+        // 加载画布
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        // 保存画布
+        context.save();
+        cut(centerPoint);
+        // 绘画
+        context.drawImage(image, 0, 0);
+        context.restore();
+    }
+
+    function reset() {
+        initCanvas();
+    }
+
+    function show() {
+        // 创建定时器
+        var run = setInterval(function() {
+            centerPoint.r += 20;
+            if (centerPoint.r > 2 * Math.max(canvas.width, canvas.height)) {
+                clearInterval(run);
+            }
+            draw(image, centerPoint);
+        }, 20);
+    }
+    </script>
+</body>
+
+</html>
