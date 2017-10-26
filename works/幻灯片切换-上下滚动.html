@@ -69,7 +69,8 @@
     $(function() {
         $("#move>li").eq(0).css({
             "background-color": '#fff',
-            "color": 'black'
+            "color": 'black',
+            "width":"40px"
         });
             $("#move>li").hover(function(event) {
                 $(this).css({
@@ -79,6 +80,7 @@
                     "background-color": '#f60',
                     "color": '#fff'
                 });
+                $(this).animate({"width":"40px"}, 100).siblings().animate({"width":"20px"}, 100)
                 var num = $(this).index();
                $("#img").stop(true,true).animate({'top': -num*204+"px"}, 400);
             });
