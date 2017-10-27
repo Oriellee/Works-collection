@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
     <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <title>lianxi</title>
+    <title>canvas模糊照片</title>
     <style>
     * {
         padding: 0;
@@ -14,21 +14,25 @@
 
     #box {
         position: relative;
-        width: 70rem;
-        height: 50rem;
+        width: 800px;
+        height: 600px;
         margin: 2rem auto;
     }
 
     #blur-image {
-        width: 70rem;
-        height: 50rem;
+        width: 800px;
+        height: 600px;
         position: absolute;
         display: block;
         z-index: 0;
         /*滤镜编辑模糊程度*/
-        -webkit-filter: grayscale(100%);
+        -webkit-filter: blur(10px);
+        -o-filter: blur(10px);
+        filter: blur(10px);
+        /*滤镜黑白效果*/
+       /* -webkit-filter: grayscale(100%);
         -o-filter: grayscale(100%);
-        filter: grayscale(100%);
+        filter: grayscale(100%);*/
     }
 
     #canvas {
@@ -38,7 +42,7 @@
     }
 
     #buttonGroup {
-        width: 70rem;
+        width: 800px;
         margin: 4rem auto;
         text-align: center;
     }
@@ -49,16 +53,16 @@
 
 /*    @media screen and (max-width:840px) {
         #box {
-            width: 50rem;
+            width: 600px;
             height: 35rem;
             margin: 2rem auto;
         }
         #blur-image {
-            width: 50rem;
+            width: 600px;
             height: 35rem;
         }
         #buttonGroup {
-            width: 50rem;
+            width: 600px;
         }
     }
 
