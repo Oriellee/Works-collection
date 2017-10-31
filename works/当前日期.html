@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>时间戳</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+</head>
+
+<body>
+    <p id="show"></p>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script>
+    function run() {
+        var myDate = new Date();
+        var year = myDate.getFullYear(),
+            month = myDate.getMonth(),
+            date = myDate.getDate(),
+            hours = myDate.getHours(),
+            minutes = myDate.getMinutes(),
+            seconds = myDate.getSeconds();
+
+        hours = check(hours);
+        minutes = check(minutes);
+        seconds = check(seconds);
+
+        var str = year + "年" + month + "月" + date + "日" + hours + ":" + minutes + ":" + seconds;
+        return str;
+    }
+
+    function check(i) {
+        if (i < 10) {
+            i = "0" + i;
+            return i;
+        } else {
+            return i;
+        }
+    }
+    $("#show").text(run);
+
+    var timer = setInterval(function() {
+        $("#show").text(run);
+    }, 1000);
+    </script>
+</body>
+
+</html>

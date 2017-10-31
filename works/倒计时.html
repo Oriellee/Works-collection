@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>时间戳</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    #box {
+        width: 60%;
+        max-width: 40rem;
+        background-color: #E1F5FE;
+        margin: 5rem auto;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    #input {
+        width: 60%;
+        margin: 1rem 0;
+    }
+
+    p {
+        width: 100%;
+        height: 2rem;
+        margin: 1rem 0;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        请输入日期：
+        <input type="text" id="input" placeholder="格式如：2017-08-28">
+        <button id="start" class="btn btn-primary">开始</button>
+        <p>距离您输入的</p>
+        <p id="show">111</p>
+    </div>
+    <script type="text/javascript" src="jquery-3.2.1.js"></script>
+    <script>
+    function check(num) {
+        var reg = /^(?:(?!0000)[0-9]{4}-(?:(?:0[1-9]|1[0-2])-(?:0[1-9]|1[0-9]|2[0-8])|(?:0[13-9]|1[0-2])-(?:29|30)|(?:0[13578]|1[02])-31)|(?:[0-9]{2}(?:0[48]|[2468][048]|[13579][26])|(?:0[48]|[2468][048]|[13579][26])00)-02-29)$/;
+        return reg.test(num);
+    }
+
+    function getTime(day) {
+        re = /(\d{4})(?:-(\d{1,2})(?:-(\d{1,2}))?)?(?:\s+(\d{1,2}):(\d{1,2}):(\d{1,2}))?/.exec(day);
+        return new Date(re[1], (re[2] || 1) - 1, re[3] || 1, re[4] || 0, re[5] || 0, re[6] || 0).getTime();
+    }
+    var timer;
+    $("#start").click(function(event) {
+        var future, now, sum, lastDays, lastHours, lastMinutes, lastSeconds, lastStr;
+
+        clearInterval(timer);
+        future = $("#input").val();
+        if (check(future)) {
+            now = Date.parse(new Date());
+            future += " 00:00:00";
+            future = getTime(future);
+            if (future >= now) {
+                sum = parseInt((future - now) / 1000);
+                timer = setInterval(function() {
+                    sum--;
+                    lastDays = parseInt(sum / 60 / 60 / 24);
+                    lastHours = parseInt(sum / 60 / 60 % 24);
+                    lastMinutes = parseInt(sum / 60 % 60);
+                    lastSeconds = parseInt(sum % 60);
+                    lastStr = lastDays + "天" + lastHours + "小时" + lastMinutes + "分钟" + lastSeconds + "秒";
+                    $("#show").text(lastStr);
+                    if (sum < 1) {
+                        clearInterval(timer);
+                    }
+                }, 1000);
+
+            } else {
+                alert("输入日期必须大于当前日期！");
+            }
+        } else {
+            alert("请按照格式输入正确日期");
+        }
+
+    });
+    </script>
+</body>
+
+</html>
