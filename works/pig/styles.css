@@ -1,0 +1,322 @@
+html,
+body {
+  height: 100%;
+  background-color: lightblue;
+  font-size: 62.5% 62.5%;
+}
+.box {
+  margin: auto;
+  transform: translateY(-50%);
+  position: relative;
+  top: 50%;
+  width: 31.25rem;
+  height: 46.875rem;
+  background-color: #ffffff;
+}
+.box > p {
+  text-align: center;
+  font-size: 1.875rem;
+  color: #ffb3da;
+  margin: 0;
+}
+.box .top-box {
+  width: 15.4375rem;
+  height: 16.25rem;
+}
+.box .top-box .ear {
+  background-color: #ffb3da;
+  width: 1.875rem;
+  height: 3.4375rem;
+  transform: rotate(10deg);
+  border: 0.375rem solid #ec98c2;
+  border-radius: 100% 100% 100% 100% / 80% 80% 100% 100%;
+  display: inline-block;
+  position: relative;
+  left: 15.875rem;
+  margin-top: 3.75rem;
+}
+.box .top-box .left-ear {
+  margin-right: 0.3125rem;
+}
+.box .top-box .right-ear {
+  top: 1.8125rem;
+  transform: rotate(34deg);
+}
+.box .top-box .head-box {
+  width: 15.3125rem;
+  height: 15.3125rem;
+  position: relative;
+  left: 6.375rem;
+  top: -1.625rem;
+}
+.box .top-box .head-box .nose {
+  width: 15.9375rem;
+  height: 6.0625rem;
+  transform: rotate(20deg);
+  background-color: #ffb3da;
+  border: 0.375rem solid #ec98c2;
+  border-radius: 100% 77% 87% 59% / 108% 100% 100% 80%;
+}
+.box .top-box .head-box .nose > div {
+  width: 2.625rem;
+  height: 3.75rem;
+  background-color: #ffb3da;
+  border: 0.375rem solid #ec98c2;
+  transform: rotate(20deg);
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  position: relative;
+  top: 0.9375rem;
+  left: -0.375rem;
+}
+.box .top-box .head-box .nose > div > div {
+  transform: rotate(-21deg);
+}
+.box .top-box .head-box .nose > div > div > div {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #db6d9b;
+  border-radius: 100%;
+  display: inline-block;
+  position: relative;
+  top: 0.875rem;
+  left: -0.0625rem;
+}
+.box .top-box .head-box .face {
+  width: 11.5rem;
+  height: 10.125rem;
+  transform: rotate(14deg);
+  background-color: #ffb3da;
+  border: 0.375rem solid #ec98c2;
+  border-radius: 22% 31% 80% 72% / 79% 74% 100% 105%;
+  position: relative;
+  top: -4.1875rem;
+  left: 3.8125rem;
+}
+.box .top-box .head-box .face .shadow {
+  width: 10.9375rem;
+  height: 5.75rem;
+  background-color: #ffb3da;
+  position: relative;
+  top: -1.0625rem;
+  left: -0.375rem;
+  border-radius: 53% 62% 123% 50%;
+}
+.box .top-box .head-box .face .eye {
+  position: relative;
+  left: 0.25rem;
+  top: -6.9375rem;
+  transform: rotate(7deg);
+}
+.box .top-box .head-box .face .eye > div {
+  width: 1.75rem;
+  height: 1.75rem;
+  background-color: #ffffff;
+  border: 0.375rem solid #ec98c2;
+  border-radius: 100%;
+  display: inline-block;
+  overflow: hidden;
+}
+.box .top-box .head-box .face .eye > div > div {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #000000;
+  border-radius: 100%;
+  position: relative;
+  left: -0.0625rem;
+  top: 0.5rem;
+}
+.box .top-box .head-box .face .blush {
+  width: 3.0625rem;
+  height: 3.75rem;
+  background-color: #fe96ce;
+  transform: rotate(18deg);
+  border-radius: 100%;
+  position: relative;
+  top: -7.4375rem;
+  left: 7.375rem;
+}
+.box .top-box .head-box .face .mouse {
+  position: relative;
+  top: -6.5625rem;
+  left: 1.0625rem;
+}
+.box .top-box .head-box .face .mouse > div:nth-child(1) {
+  width: 5.75rem;
+  height: 1.6875rem;
+  background-color: black;
+  border: 0.375rem solid #d44c80;
+  border-radius: 0 0 60% 60% / 0 0 100% 100%;
+}
+.box .top-box .head-box .face .mouse > div:nth-child(2) {
+  width: 5.75rem;
+  height: 0.8125rem;
+  background-color: #ffb3da;
+  border: 0.375rem solid #d44c80;
+  border-radius: 0 0 123% 124% / 0 0 200% 200%;
+  position: relative;
+  top: -2.5rem;
+  left: 0rem;
+  border-top: none;
+}
+.box .body-box > .body {
+  width: 14rem;
+  height: 11.25rem;
+  background-color: #eb5b50;
+  border: 0.375rem solid #e13c32;
+  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  position: relative;
+  top: -1.875rem;
+  left: 8.5rem;
+  z-index: -1;
+}
+.box .body-box .left-hand {
+  position: relative;
+  display: inline-block;
+  top: 4.375rem;
+  left: 5.875rem;
+  z-index: -30;
+}
+.box .body-box .left-hand > div:nth-child(1) {
+  width: 1.5rem;
+  height: 0.625rem;
+  background-color: #ffb3da;
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  position: relative;
+  top: 0.625rem;
+  left: 0.125rem;
+}
+.box .body-box .left-hand > div:nth-child(2) {
+  width: 4.9375rem;
+  height: 0.75rem;
+  transform: rotate(-20deg);
+  background-color: #ffb3da;
+  border-radius: 101% 100% 100% 52% / 55% 100% 100% 90%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.box .body-box .left-hand > div:nth-child(3) {
+  width: 1.3125rem;
+  height: 0.625rem;
+  transform: rotate(-51deg);
+  background-color: #ffb3da;
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  position: relative;
+  top: 0.3125rem;
+  left: 0.75rem;
+}
+.box .body-box .right-hand {
+  position: relative;
+  display: inline-block;
+  top: 3.9375rem;
+  left: 15.0625rem;
+  z-index: -30;
+  transform: rotate(226deg);
+}
+.box .body-box .right-hand > div:nth-child(1) {
+  width: 1.5rem;
+  height: 0.625rem;
+  background-color: #ffb3da;
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  position: relative;
+  top: 0.625rem;
+  left: 0.125rem;
+}
+.box .body-box .right-hand > div:nth-child(2) {
+  width: 4.9375rem;
+  height: 0.75rem;
+  transform: rotate(-20deg);
+  background-color: #ffb3da;
+  border-radius: 101% 100% 100% 52% / 55% 100% 100% 90%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.box .body-box .right-hand > div:nth-child(3) {
+  width: 1.3125rem;
+  height: 0.625rem;
+  transform: rotate(-51deg);
+  background-color: #ffb3da;
+  border-radius: 100% 100% 100% 100% / 100% 100% 100% 100%;
+  position: relative;
+  top: 0.3125rem;
+  left: 0.75rem;
+}
+.box .body-box .tail {
+  position: relative;
+  display: inline-block;
+  top: -6.375rem;
+  left: 22.8125rem;
+  z-index: -30;
+}
+.box .body-box .tail > div {
+  display: inline-block;
+}
+.box .body-box .tail > div:nth-child(1) {
+  width: 1.5625rem;
+  height: 0.625rem;
+  background-color: #ffb3da;
+  border-radius: 100% 92% 80% 99% / 100% 92% 80% 99%;
+}
+.box .body-box .tail > div:nth-child(2) {
+  width: 0.625rem;
+  height: 0.8125rem;
+  border-radius: 70% 92% 56% 74% / 63% 86% 75% 75%;
+  border: 0.625rem solid #ffb3da;
+  background-color: #ffffff;
+  position: relative;
+  left: -1.3125rem;
+  top: 0rem;
+}
+.box .body-box .tail > div:nth-child(3) {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 100% 44% 99% 74% / 100% 92% 100% 75%;
+  border: 0.625rem solid #ffb3da;
+  background-color: #ffffff;
+  position: relative;
+  top: 0.0625rem;
+  left: -2.3125rem;
+  border-top: none;
+  border-left: none;
+  transform: rotate(95deg);
+}
+.box .foot-box {
+  display: inline-block;
+  position: relative;
+  top: -4.25rem;
+  left: 12.5rem;
+}
+.box .foot-box > .left-foot,
+.box .foot-box .right-foot {
+  display: inline-block;
+  margin-right: 3.125rem;
+}
+.box .foot-box > .left-foot > div:nth-child(1),
+.box .foot-box .right-foot > div:nth-child(1) {
+  width: 0.625rem;
+  height: 3.75rem;
+  background-color: #ffb3da;
+  border-radius: 30% 30%;
+}
+.box .foot-box > .left-foot > div:nth-child(2),
+.box .foot-box .right-foot > div:nth-child(2) {
+  width: 2.625rem;
+  height: 0.8125rem;
+  background-color: #000000;
+  border-radius: 60% 100% 100% 60% / 100% 100% 100% 100%;
+  position: relative;
+  left: -1.875rem;
+  top: -0.375rem;
+}
+.box .foot-box > .floor {
+  width: 15rem;
+  height: 3.125rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 100%;
+  position: relative;
+  top: -2.4375rem;
+  z-index: -99;
+  left: -4.875rem;
+}
+/*# sourceMappingURL=styles.css.map */
